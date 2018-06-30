@@ -1,0 +1,12 @@
+body{
+	font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+background-color: #E6E6E4;
+color: #424242;
+}
+
+.title{
+	font-weight: bold;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 60px;
+}
