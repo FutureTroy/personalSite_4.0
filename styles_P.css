@@ -15,3 +15,44 @@ color: #424242;
 	color: white;
 	font-size: 2.5em;
 }
+
+.projectHeader{
+	position: relative;
+	top: 0px;
+}
+.projectHeader img{
+	 position: relative; 
+	 /*width: 70%;*/
+}
+
+.projectHeader h3{ 
+	position: relative;
+    top: -40px;
+    left: 60px;
+
+}
+
+.project p{
+    color: white;
+    position: relative;
+    width: 55%;
+    top: -20px;
+    left: 50px;
+}
+
+.projectL p{
+	color: white;
+    position: relative;
+    width: 55%;
+    top: -20px;
+    right: -50px;
+}
+
+.projectL h3{
+	left: 80px;
+}
+
+.projectL .project_imgL{
+	position: relative;
+	left: -200px;
+}
