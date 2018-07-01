@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-	<title>Troy Brown</title>
+	<title>Troy Brown Designs</title>
 
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -15,11 +15,38 @@
 
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,700|IBM+Plex+Sans:400,400i,700" rel="stylesheet">
 
+	<link rel="stylesheet" href="style3.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" type="text/css" href="styles_P.css">
+
 </head>
 <body>
-	<div class="btn_home" style="position: absolute; right: 40px; top: 40px;"><img src="img/img_logo.png" style=""></div>
-	<div id="content">
-	<table style=" margin: 15% 20% 15% 20%; align-content: center">
+	<div class="btn_home" style="position: absolute; right: 40px; top: 40px;">	<img src="img/img_logo.png" style="">
+	</div>
+
+	
+	<div class="wrapper">
+	<!-- Sidebar  -->
+        <nav id="sidebar">
+            
+
+            <div class="sidebar-header">
+                <h1 class="title" id="title_projects">Recent Projects</h1>
+            </div>
+
+            <img src="img/btn_close.png" id="dismiss">
+
+            
+        </nav>
+    </nav>
+
+	<img src="img/btn_sidebar.png" id="sidebarCollapse" style="width:50px; position:  absolute; left: 0px; top: 31%;">
+
+    <br>
+
+		<table style="position: absolute; margin: 15% 20% 15% 20%; align-content: center">
 			<tr>
 				<td>
 					<div  background-color: black;">
@@ -34,23 +61,44 @@
 					<img style="width:6s0%; height: 60%;"src="img/btn_Projects.png">
 					<br>
 					<br>
-					<img style="width:4s0%; height: 60%; margin-left: -80px;"src="img/btn_Contact.png">
+					<img style="width:4s0%; height: 60%; margin-left: -100px;"src="img/btn_Contact.png">
 				</td>
 			</tr>
 		</table>
-		<p>		
-			
-
-		</p>
 	</div>
 
+<div class="overlay"></div>
 
 
 
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 </html>
