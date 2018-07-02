@@ -20,7 +20,7 @@ transition: .5s ease;
 
 
 #img_header{
-	transition: 9.0s ease;
+	transition: .5s ease;
 }
 
 .projectHeader{
@@ -99,6 +99,10 @@ transition: .5s ease;
 
 #btn_contact{
 		transition: .5s ease;
+}
+
+.btn_contacts{
+	display: none;
 }
 
 #btn_projects{

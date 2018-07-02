@@ -26,7 +26,10 @@
 
 
 <body>
-	<div  class="btn_continue" style="position: absolute; right: 40px; top: 40px;">	<img id="btn_Home" src="img/img_logo.png" style="">
+	<script>$("#btn_resume").toggleDisabled();
+	        	$("#btn_github").toggleDisabled();
+	        	$("#btn_email").toggleDisabled();</script>
+	<div  class="btn_continue" style="position: absolute; right: 40px; top: 40px;">	<img id="btn_home" src="img/img_logo.png" style="">
 	</div>
 
 	
@@ -36,7 +39,7 @@
             
 
             <div class="sidebar-header">
-            	<div class="btn_home" style="position: absolute; right: 40px; top: 40px;">	<img src="img/img_logoDark.png">
+            	<div class="btn_home" style="position: absolute; right: 40px; top: 40px;">	<img id="btn_sidebarHome" src="img/img_logoDark.png">
 				</div>
 				<div style="position: absolute; right: 40px; top: 145px;">
 					<h1 class= "title" id="title_projects" >Recent Projects</h1>
@@ -196,12 +199,28 @@
 					<div id="txt_title">
 						<h1 id="txt_titleH1" class="title" >Welcome</h1>
 					</div>
+
 					<hr style="width: 0%;">
 					<br>
+
+
 					<img id="btn_projects" class="btn_continue"  style="width:6s0%; height: 60%;"src="img/btn_Projects.png">
+
+					<img id="btn_email" class="btn_continue btn_contacts"  style="width:6s0%; height: 60%;"src="img/btn_email.png">
+
 					<br>
+
+
+					<img id="btn_github" class="btn_continue btn_contacts"  style="width:6s0%; height: 60%; margin-left: -50px;"src="img/btn_github.png">
 					<br>
-					<img id="btn_contact" class="btn_continue" onclick="console.log('btn_clicked');" style="width:4s0%; height: 60%; margin-left: -100px;"src="img/btn_Contact.png"><!-- onclick="chBgColor('#C3776C')" -->
+
+
+					<img id="btn_contact" class="btn_continue" onclick="console.log('btn_clicked');" style="width:4s0%; height: 60%; margin-left: -100px;"src="img/btn_Contact.png">
+
+					<img id="btn_resume" class="btn_continue btn_contacts" onclick="console.log('btn_clicked');" style="width:4s0%; height: 60%; margin-left: -100px;"src="img/btn_resume.png">
+
+
+					<!-- onclick="chBgColor('#C3776C')" -->
 				</td>
 			</tr>
 		</table>
@@ -230,12 +249,19 @@
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 
     <script type="text/javascript">
+    	var atHome = true;
         $(document).ready(function () {
+        	
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
             });
 
             $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#btn_sidebarHome, .overlay').on('click', function () {
                 $('#sidebar').removeClass('active');
                 $('.overlay').removeClass('active');
             });
@@ -247,6 +273,37 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
 
+            $('#btn_home').on('click',function(){
+            	console.log('home clicked');
+
+            	
+
+            	if(!atHome){
+				$("#txt_titleH1").fadeOut(function () {
+				    $("#txt_titleH1").text(($("p").text() == 'Welcome') ? 'Get in touch...' : 'Welcome').fadeIn();
+				})
+
+            	$("#btn_projects").fadeOut();
+		        $('#btn_projects').toggleDisabled();
+		        $("#btn_contact").fadeOut();
+		        $('#btn_contact').toggleDisabled();
+
+		        $("#btn_resume").toggleDisabled();
+	        	$("#btn_github").toggleDisabled();
+	        	$("#btn_email").toggleDisabled();
+
+	        	$("#btn_resume").toggleDisabled();
+	        	$("#btn_github").toggleDisabled();
+	        	$("#btn_email").toggleDisabled();
+            	}
+            	
+
+			    
+
+
+            	revertHome();
+            });
+
             $('#btn_projects').on('click', function () {
             	
                 $('#sidebar').addClass('active');
@@ -255,14 +312,17 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
 
-            $("#btn_contact").on("click",function(){
-            	//$("p").fadeOut();
+            $("#btn_contact").on("click",function(){;
             	$("#txt_titleH1").fadeOut(function () {
             		$("#txt_titleH1").text(($("p").text() == 'Get in touch...') ? 'Welcome' : 'Get in touch...').fadeIn();
         		})
 
             	chBgColor();
     		});
+
+    		// $("#btn_resume").toggleDisabled();
+      //   	$("#btn_github").toggleDisabled();
+      //   	$("#btn_email").toggleDisabled();
 		});
         
 		
@@ -272,7 +332,7 @@
 
         	document.body.style.backgroundColor = '#C3776C';
 
-        	document.getElementById('btn_Home').src="img/img_logoMed.png";
+        	document.getElementById('btn_home').src="img/img_logoMed.png";
 
         	document.getElementById('img_header').src="img/img_header2.png";
 
@@ -281,11 +341,38 @@
         	document.getElementById('txt_titleH1').style.color="#E6E6E4";
 
 
-        	document.getElementById('btn_projects').style.opacity="0";
-        	document.getElementById('btn_contact').src="img/btn_contactOpt.png";
-        	document.getElementById('btn_contact').style.position="relative";
-        	document.getElementById('btn_contact').style.right="-105px";
-        	document.getElementById('btn_contact').style.width="175px";
+        	// document.getElementById('btn_projects').style.opacity="0";
+        	// document.getElementById('btn_contact').style.opacity="0";
+        	// document.getElementById('btn_contact').src="img/btn_contactOpt.png";
+        	// document.getElementById('btn_contact').style.position="relative";
+        	// document.getElementById('btn_contact').style.right="-105px";
+        	// document.getElementById('btn_contact').style.width="175px";
+        	//document.getElementById('txt_aboutMe').style.opacity="1";
+        	//document.getElementById('txt_aboutTitle').style.opacity="1";
+   
+			
+        	atHome = false;
+	  		console.log(atHome);
+	  		return true;
+		}
+
+		function revertHome(){
+        	console.log("Home Reset");
+
+        	document.body.style.backgroundColor = '#E6E6E4';
+
+        	document.getElementById('btn_home').src="img/img_logo.png";
+
+        	document.getElementById('img_header').src="img/img_header.png";
+
+        	//document.getElementById('');
+
+        	document.getElementById('txt_titleH1').style.color="#424242";
+
+
+        	// document.getElementById('btn_projects').style.opacity="1";
+        	// document.getElementById('btn_contact').style.opacity="1";
+
         	//document.getElementById('txt_aboutMe').style.opacity="1";
         	//document.getElementById('txt_aboutTitle').style.opacity="1";
    
@@ -294,8 +381,28 @@
 	  		
 	  		return true;
 		}
-       
 
+		(function ($) {
+		    $.fn.toggleDisabled = function () {
+		        return this.each(function () {
+		            var $this = $(this);
+		            $this.toggle($this.prop('disabled')).prop('disabled', !$this.prop('disabled')) 
+		        });
+		    };
+		})(jQuery);
+
+		$(function () {
+		    $('#btn_contact').click(function () {
+		    	$("#btn_projects").fadeOut();
+		        $('#btn_projects').toggleDisabled();
+		        $("#btn_contact").fadeOut();
+		        $('#btn_contact').toggleDisabled();
+
+			    $("#btn_resume").toggleDisabled();
+	        	$("#btn_github").toggleDisabled();
+	        	$("#btn_email").toggleDisabled();
+		    });
+		});
     </script>
 
     
