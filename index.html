@@ -22,21 +22,38 @@
     <link rel="stylesheet" type="text/css" href="styles_P.css">
 
 </head>
+
+
+
 <body>
-	<div class="btn_home" style="position: absolute; right: 40px; top: 40px;">	<img src="img/img_logo.png" style="">
+	<div  class="btn_continue" style="position: absolute; right: 40px; top: 40px;">	<img id="btn_Home" src="img/img_logo.png" style="">
 	</div>
 
 	
 	<div class="wrapper">
-	<!-- Sidebar  -->
+	<!-- Sidebar: Projects  -->
         <nav id="sidebar">
             
 
             <div class="sidebar-header">
-                <h1 class="title" id="title_projects">Recent Projects</h1>
+            	<div class="btn_home" style="position: absolute; right: 40px; top: 40px;">	<img src="img/img_logoDark.png">
+				</div>
+				<div style="position: absolute; right: 40px; top: 145px;">
+					<h1 class= "title" id="title_projects" >Recent Projects</h1>
+					<br>
+					<img class="btn_continue" src="img/btn_more.png" style="position: relative; right: -60px; width: 270px">
+				</div>
+                
             </div>
 
-            <img src="img/btn_close.png" id="dismiss">
+            <img class="btn_continue" src="img/btn_close.png" id="dismiss">
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
             <!-- Project 1 -->
             <table class="project" style="margin-left: 125px;">
@@ -52,21 +69,24 @@
             						</div>
             					</td>
             				</tr>
-            				<tr>
-            					<td>
-            						<p>
-            							Web presence and branding for a local photography, car modifications and event hosting club.
-            						</p>
-            					</td>
-            				</tr>
-            				<tr>
-            					<td><img src="img/btn_continueR.png"></td>
-            				</tr>
+            				<div class="project_content">
+	            				<tr>
+	            					<td>
+	            						<p>
+	            							Web presence and branding for a local photography, car modifications and event hosting club.
+	            						</p>
+	            					</td>
+	            				</tr>
+	            				<tr>
+	            					<td><img class="btn_continue"src="img/btn_continueR.png"></td>
+	            				</tr>
+            				</div>	
             			</table>
             		</td>
             	</tr>
             </table>
 
+            <br>
             <br>
             <br>
 
@@ -84,6 +104,7 @@
             						</div>
             					</td>
             				</tr>
+            				<div class="project_content">
             				<tr>
             					<td>
             						<p>
@@ -93,14 +114,16 @@
             					</td>
             				</tr>
             				<tr>
-            					<td><img src="img/btn_continueL.png" style="position: relative; right: -200px"></td>
+            					<td><img class="btn_continue" src="img/btn_continueL.png" style="position: relative; right: -200px"></td>
             				</tr>
+            				</div>
             			</table>
             		</td>
             		<td class="project_imgL"><img src="img/img_projectTopSpot.png"></td>
             	</tr>
             </table>
 
+            <br>
             <br>
             <br>
 
@@ -118,6 +141,7 @@
             						</div>
             					</td>
             				</tr>
+            				<div class="project_content">
             				<tr>
             					<td>
             						<p>
@@ -126,13 +150,17 @@
             					</td>
             				</tr>
             				<tr>
-            					<td><img src="img/btn_continueR.png"></td>
+            					<td><img class="btn_continue" src="img/btn_continueR.png"></td>
             				</tr>
+            				</div>
             			</table>
             		</td>
             	</tr>
             </table>
 
+            <br>
+            <br>
+            <br>
             <br>
             <br>
 
@@ -147,7 +175,7 @@
 
 
 
-	<img src="img/btn_sidebar.png" id="sidebarCollapse" style="width:50px; position:  absolute; left: 0px; top: 31%;">
+	<img class="btn_continue" src="img/btn_sidebar.png" id="sidebarCollapse" style="width:50px; position:  absolute; left: 0px; top: 31%;">
 
 
 
@@ -160,22 +188,25 @@
 			<tr>
 				<td>
 					<div  background-color: black;">
-						<img style="width:250px; height: 250px;"src="img/img_header.png">
+						<img id="img_header" style="width:250px; height: 250px;"src="img/img_header.png">
 					</div>
 				</td>
 
 				<td style="padding-top: 10%; padding-left: 5%">
-					<h1 class="title">Welcome</h1>
+					<div id="txt_title">
+						<h1 id="txt_titleH1" class="title" >Welcome</h1>
+					</div>
 					<hr style="width: 0%;">
 					<br>
-					<img style="width:6s0%; height: 60%;"src="img/btn_Projects.png">
+					<img id="btn_projects" class="btn_continue"  style="width:6s0%; height: 60%;"src="img/btn_Projects.png">
 					<br>
 					<br>
-					<img style="width:4s0%; height: 60%; margin-left: -100px;"src="img/btn_Contact.png">
+					<img id="btn_contact" class="btn_continue" onclick="console.log('btn_clicked');" style="width:4s0%; height: 60%; margin-left: -100px;"src="img/btn_Contact.png"><!-- onclick="chBgColor('#C3776C')" -->
 				</td>
 			</tr>
 		</table>
-	</div>
+
+
 
 
 
@@ -187,9 +218,9 @@
 <div class="overlay"></div>
 
 
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX)
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
@@ -215,7 +246,58 @@
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
-        });
+
+            $('#btn_projects').on('click', function () {
+            	
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+            $("#btn_contact").on("click",function(){
+            	//$("p").fadeOut();
+            	$("#txt_titleH1").fadeOut(function () {
+            		$("#txt_titleH1").text(($("p").text() == 'Get in touch...') ? 'Welcome' : 'Get in touch...').fadeIn();
+        		})
+
+            	chBgColor();
+    		});
+		});
+        
+		
+
+        function chBgColor(){
+        	console.log("JS activated BGChanged");
+
+        	document.body.style.backgroundColor = '#C3776C';
+
+        	document.getElementById('btn_Home').src="img/img_logoMed.png";
+
+        	document.getElementById('img_header').src="img/img_header2.png";
+
+        	//document.getElementById('');
+
+        	document.getElementById('txt_titleH1').style.color="#E6E6E4";
+
+
+        	document.getElementById('btn_projects').style.opacity="0";
+        	document.getElementById('btn_contact').src="img/btn_contactOpt.png";
+        	document.getElementById('btn_contact').style.position="relative";
+        	document.getElementById('btn_contact').style.right="-105px";
+        	document.getElementById('btn_contact').style.width="175px";
+        	//document.getElementById('txt_aboutMe').style.opacity="1";
+        	//document.getElementById('txt_aboutTitle').style.opacity="1";
+   
+			
+
+	  		
+	  		return true;
+		}
+       
+
     </script>
+
+    
 </body>
 </html>
